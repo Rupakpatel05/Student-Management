@@ -31,3 +31,10 @@ python3 app.py
 | name   | VARCHAR(100)      |
 | phone  | VARCHAR(10)       |
 | email  | VARCHAR(100)      |
+## 📷 Screenshots
+
+<p align="center">
+  <img src="screenshot1.png" alt="Home Page" width="45%" />
+  &nbsp;&nbsp;
+  <img src="screenshot2.png" alt="Student List Page" width="45%" />
+</p>
