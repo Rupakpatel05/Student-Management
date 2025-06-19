@@ -22,15 +22,14 @@ A web-based application to manage student records using **Flask + MySQL**.
 3. Install required packages  
 4. Create a MySQL DB and update your DB credentials in `app.py`  
 5. Run the app:
-
-```bash
-python3 app.py
+ python3 app.py
 | Column | Type              |
 | ------ | ----------------- |
 | id     | INT (Primary Key) |
 | name   | VARCHAR(100)      |
 | phone  | VARCHAR(10)       |
 | email  | VARCHAR(100)      |
+
 ## 📷 Screenshots
 
 <p align="center">
