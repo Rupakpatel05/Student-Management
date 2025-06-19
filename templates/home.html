@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management</title>
+    <style>
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f8f9fa;
+    padding: 20px;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #fff;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+th {
+    background-color: #343a40;
+    color: white;
+}
+</style>
+
+</head>
+<body>
+    <h1>All Students</h1>
+    <a href="/add">Add New Student</a>
+    <h2>Welcome, Admin! 🧑‍💻</h2>
+        <p id="clock"></p>
+
+            <script>    
+                setInterval(() => {
+                document.getElementById('clock').innerText = "Current Time: " + new Date().toLocaleTimeString();
+                }, 1000);
+            </script>
+            <div style="margin-bottom: 20px;">
+    <label for="searchBox" style="font-weight: bold;">🔍 Search Student:</label>
+    <input type="text" id="searchBox" placeholder="Enter student name..." onkeyup="searchStudents()" style="padding: 8px; width: 300px; border-radius: 5px; border: 1px solid #ccc;">
+</div>
+
+<table border="1" cellpadding="8">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Action</th>
+  </tr>
+  {% for student in students %}
+  <tr>
+    <td>{{ student[0] }}</td>
+    <td>{{ student[1] }}</td>
+    <td>{{ student[2] }}</td>
+    <td>{{ student[3] }}</td>
+    <td>
+      <!-- Delete button -->
+      <form action="{{ url_for('delete_student', student_id=student[0]) }}" method="POST" style="display:inline;">
+        <button type="submit" style="background:none; border:none; cursor:pointer;" title="Delete">
+          🗑️
+        </button>
+      </form>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+
+<script>
+function searchStudents() {
+    let input = document.getElementById("searchBox").value.toLowerCase();
+    let rows = document.querySelectorAll("table tbody tr");
+    rows.forEach(row => {
+        let name = row.cells[1].innerText.toLowerCase();
+        row.style.display = name.includes(input) ? "" : "none";
+    });
+}
+</script>
+
+</body>
+</html>

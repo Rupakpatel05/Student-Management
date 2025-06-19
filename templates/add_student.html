@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Student</title>
+</head>
+<body>
+    <h1>Add Student</h1>
+    <form method="POST">
+        <label>Name:</label><input type="text" name="name" required><br><br>
+        <label>Email:</label><input type="email" name="email" required><br><br>
+        <label>Phone:</label><input type="tel" name="phone" pattern="[0-9]{10}" maxlength="10" required title="Enter 10-digit phone number"><br><br>
+
+        <button type="submit">Add</button>
+    </form>
+    <br>
+    <a href="/">Back to Home</a>
+</body>
+</html>
